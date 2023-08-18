@@ -6,7 +6,7 @@ run = False
 try:
     list=jieba.cut(sys.argv[1],cut_all=False)
 except:
-    list=jieba.cut(input("输入启动密码"),cut_all=False)
+    list=jieba.cut(input("输入启动密码:"),cut_all=False)
 
 for i in list:
     if i in ["原神","原始人"]:
