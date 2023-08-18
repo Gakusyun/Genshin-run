@@ -1,6 +1,7 @@
 import sys
 import jieba
 import subprocess
+import configparser
 run = False
 try:
     list=jieba.cut(sys.argv[1],cut_all=False)
@@ -9,10 +10,11 @@ except:
 
 for i in list:
     if i in ["原神","原始人"]:
-        game_path = r'C:\Program Files\Genshin Impact\Genshin Impact Game\YuanShen.exe'
+        config = configparser.ConfigParser()
+        config.read("config.ini", encoding="utf-8")
+        game_path = config.get("Paths", "path")
     if i in ["启动","起洞"]:
         run = True
-
 if run == True:
     subprocess.Popen(game_path)
 
