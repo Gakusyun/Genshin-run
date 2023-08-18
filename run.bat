@@ -1,24 +1,16 @@
 @ECHO OFF
-echo ÊÇ·ñÊ¹ÓÃÆßÅ£ÔÆ×÷ÎªgoÄ£¿é´úÀí(Ä¬ÈÏÎªy)[y/n]
+echo æ˜¯å¦ä½¿ç”¨æ¸…åæºä½œä¸º pipy é•œåƒæœåŠ¡å™¨(é»˜è®¤ä¸º y)[y/n]
 set choice=
-set /p choice=ÇëÖ±½ÓÊäÈë¶ÔÓ¦Êı×Ö»Ø³µ£º
-if /i "%choice%"=="n" goto py
-go env -w GO111MODULE=on
-go env -w GOPROXY=https://goproxy.cn,direct
-goto py
-:py
-echo ÊÇ·ñÊ¹ÓÃÇå»ªÔ´×÷Îªpipy¾µÏñ·şÎñÆ÷(Ä¬ÈÏÎªy)[y/n]
-set choice=
-set /p choice=ÇëÖ±½ÓÊäÈë¶ÔÓ¦Êı×Ö»Ø³µ£º
+set /p choice=è¯·è¾“å…¥ y æˆ– n å¹¶å›è½¦ï¼š
 if /i "%choice%"=="n" goto jiebains
 python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 :jiebains
-echo ÕıÔÚ°²×°jieba...
+echo æ­£åœ¨å®‰è£… jieba...
 pip install jieba
-echo ÊÇ·ñ¹¹½¨main.go(Ä¬ÈÏÎªy)[y/n]
+echo æ˜¯å¦æ„å»º main.go (é»˜è®¤ä¸º y)[y/n]
 set choice=
-set /p choice=ÇëÖ±½ÓÊäÈë¶ÔÓ¦Êı×Ö»Ø³µ£º
+set /p choice=è¯·è¾“å…¥ y æˆ– n å¹¶å›è½¦ï¼š
 if /i "%choice%"=="n" goto over
 go build
 :over
