@@ -22,10 +22,10 @@
 pip install jieba
 ```
 
-或者使用清华源
+或者使用华为源
 
 ```
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jieba
+pip install -i https://repo.huaweicloud.com/repository/pypi/simple jieba
 ```
 
 - 构建主程序 exe 文件
