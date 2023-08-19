@@ -5,7 +5,9 @@
 ## 使用方法
 
 使用本项目需要：安装 [go](https://golang.google.cn/) 、安装 [python](https://python.org/) 、安装 [jieba](https://github.com/fxsjy/jieba).
+
 >注意！安装 Python 时，请务必勾选添加到 PATH！！！
+
 ### 自动构建
 
 安装完 go、python 后，以管理员运行文件夹内 run.bat 可一键安装 jieba.
