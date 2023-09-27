@@ -50,50 +50,26 @@ while True:
                 uninstall = True
         break
     elif input() == "2":
-        yuan = True
-        shen = True
-        qi = True
-        dong = True
-        xie = True
-        zai = True
-        runRank = 0
+        key={}
         for i in sys.argv[1]:
-            if i == "原":
-                if yuan == True:
-                    runRank += 1
-                    yuan = False
-            elif i == "神":
-                if shen == True:
-                    runRank += 1
-                    shen = False
-            elif i == "启":
-                if qi == True:
-                    runRank += 10
-                    qi = False
-            elif i == "动":
-                if dong == True:
-                    runRank += 10
-                    dong = False
-            elif i == "卸":
-                if xie == True:
-                    runRank += 100
-                    xie = False
-            elif i == "载":
-                if zai == True:
-                    runRank += 100
-                    zai = False
-        if runRank == 22:
+            try:
+                key[i] +=1
+            except:
+                key[i] = 0
+        if key["原"] > 0 and key["神"] > 0 :
+            gamePath = genshinPath
+            uninstallPath = genUninsPath
+        if key["起"] > 0 and key["动"] > 0:
             run = True
-        elif runRank == 202:
+            if key["卸"] > 0 and key["载"] > 0:
+                if key["起"]+key["动"]<key["卸"]+key["载"]:
+                    uninstall = True
+        if key["卸"] > 0 and key["载"] > 0:
             uninstall = True
-        else:
-            print("未提取到有效信息")
-        break
-    else:
-        print("输入不正确，请重试")
-
+        if key["起"] > 0 and key["动"] > 0:
+            if key["起"]+key["动"]>key["卸"]+key["载"]:
+                run = True
 if uninstall == True:
     subprocess.Popen(uninstallPath)
-
 if run == True:
     subprocess.Popen(gamePath)
