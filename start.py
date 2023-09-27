@@ -51,6 +51,13 @@ while True:
         break
     elif input() == "2":
         key={}
+    #     yuan = True
+    #     shen = True
+    #     qi = True
+    #     dong = True
+    #     xie = True
+    #     zai = True
+    #     runRank = 0
         for i in sys.argv[1]:
             try:
                 key[i] +=1
@@ -69,7 +76,21 @@ while True:
         if key["起"] > 0 and key["动"] > 0:
             if key["起"]+key["动"]>key["卸"]+key["载"]:
                 run = True
+            else:
+
+                
+    #     if runRank == 22:
+    #         run = True
+    #     elif runRank == 202:
+    #         uninstall = True
+    #     else:
+    #         print("未提取到有效信息")
+    #     break
+    # else:
+    #     print("输入不正确，请重试")
+
 if uninstall == True:
     subprocess.Popen(uninstallPath)
+
 if run == True:
     subprocess.Popen(gamePath)
